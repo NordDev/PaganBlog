@@ -1,0 +1,80 @@
++--------+-----------+------------------------------------------+---------------------------------+------------------------------------------------------------------------+--------------+
+| Domain | Method    | URI                                      | Name                            | Action                                                                 | Middleware   |
++--------+-----------+------------------------------------------+---------------------------------+------------------------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                                        |                                 | Closure                                                                | web          |
+|        | GET|HEAD  | admin                                    |                                 | Closure                                                                | web          |
+|        | POST      | admin/blog/categories                    | admin.blog.categories.store     | App\Http\Controllers\Admin\Blog\CategoryController@store               | web          |
+|        | GET|HEAD  | admin/blog/categories                    | admin.blog.categories.index     | App\Http\Controllers\Admin\Blog\CategoryController@index               | web          |
+|        | GET|HEAD  | admin/blog/categories/create             | admin.blog.categories.create    | App\Http\Controllers\Admin\Blog\CategoryController@create              | web          |
+|        | GET|HEAD  | admin/blog/categories/{category}         | admin.blog.categories.show      | App\Http\Controllers\Admin\Blog\CategoryController@show                | web          |
+|        | PUT|PATCH | admin/blog/categories/{category}         | admin.blog.categories.update    | App\Http\Controllers\Admin\Blog\CategoryController@update              | web          |
+|        | DELETE    | admin/blog/categories/{category}         | admin.blog.categories.destroy   | App\Http\Controllers\Admin\Blog\CategoryController@destroy             | web          |
+|        | GET|HEAD  | admin/blog/categories/{category}/edit    | admin.blog.categories.edit      | App\Http\Controllers\Admin\Blog\CategoryController@edit                | web          |
+|        | GET|HEAD  | admin/blog/comments                      | admin.blog.comments.index       | App\Http\Controllers\Admin\Blog\CommentsController@index               | web          |
+|        | POST      | admin/blog/comments                      | admin.blog.comments.store       | App\Http\Controllers\Admin\Blog\CommentsController@store               | web          |
+|        | GET|HEAD  | admin/blog/comments/create               | admin.blog.comments.create      | App\Http\Controllers\Admin\Blog\CommentsController@create              | web          |
+|        | PUT|PATCH | admin/blog/comments/{comment}            | admin.blog.comments.update      | App\Http\Controllers\Admin\Blog\CommentsController@update              | web          |
+|        | GET|HEAD  | admin/blog/comments/{comment}            | admin.blog.comments.show        | App\Http\Controllers\Admin\Blog\CommentsController@show                | web          |
+|        | DELETE    | admin/blog/comments/{comment}            | admin.blog.comments.destroy     | App\Http\Controllers\Admin\Blog\CommentsController@destroy             | web          |
+|        | GET|HEAD  | admin/blog/comments/{comment}/edit       | admin.blog.comments.edit        | App\Http\Controllers\Admin\Blog\CommentsController@edit                | web          |
+|        | GET|HEAD  | admin/blog/newsLetters                   | admin.blog.newsLetters.index    | App\Http\Controllers\Admin\Blog\NewsLetterController@index             | web          |
+|        | POST      | admin/blog/newsLetters                   | admin.blog.newsLetters.store    | App\Http\Controllers\Admin\Blog\NewsLetterController@store             | web          |
+|        | GET|HEAD  | admin/blog/newsLetters/create            | admin.blog.newsLetters.create   | App\Http\Controllers\Admin\Blog\NewsLetterController@create            | web          |
+|        | GET|HEAD  | admin/blog/newsLetters/{newsLetter}      | admin.blog.newsLetters.show     | App\Http\Controllers\Admin\Blog\NewsLetterController@show              | web          |
+|        | PUT|PATCH | admin/blog/newsLetters/{newsLetter}      | admin.blog.newsLetters.update   | App\Http\Controllers\Admin\Blog\NewsLetterController@update            | web          |
+|        | DELETE    | admin/blog/newsLetters/{newsLetter}      | admin.blog.newsLetters.destroy  | App\Http\Controllers\Admin\Blog\NewsLetterController@destroy           | web          |
+|        | GET|HEAD  | admin/blog/newsLetters/{newsLetter}/edit | admin.blog.newsLetters.edit     | App\Http\Controllers\Admin\Blog\NewsLetterController@edit              | web          |
+|        | POST      | admin/blog/posts                         | admin.blog.posts.store          | App\Http\Controllers\Admin\Blog\PostController@store                   | web          |
+|        | GET|HEAD  | admin/blog/posts                         | admin.blog.posts.index          | App\Http\Controllers\Admin\Blog\PostController@index                   | web          |
+|        | GET|HEAD  | admin/blog/posts/create                  | admin.blog.posts.create         | App\Http\Controllers\Admin\Blog\PostController@create                  | web          |
+|        | DELETE    | admin/blog/posts/{post}                  | admin.blog.posts.destroy        | App\Http\Controllers\Admin\Blog\PostController@destroy                 | web          |
+|        | PUT|PATCH | admin/blog/posts/{post}                  | admin.blog.posts.update         | App\Http\Controllers\Admin\Blog\PostController@update                  | web          |
+|        | GET|HEAD  | admin/blog/posts/{post}                  | admin.blog.posts.show           | App\Http\Controllers\Admin\Blog\PostController@show                    | web          |
+|        | GET|HEAD  | admin/blog/posts/{post}/edit             | admin.blog.posts.edit           | App\Http\Controllers\Admin\Blog\PostController@edit                    | web          |
+|        | POST      | admin/gods/categories                    | admin.gods.categories.store     | App\Http\Controllers\Admin\Gods\CategoryController@store               | web          |
+|        | GET|HEAD  | admin/gods/categories                    | admin.gods.categories.index     | App\Http\Controllers\Admin\Gods\CategoryController@index               | web          |
+|        | GET|HEAD  | admin/gods/categories/create             | admin.gods.categories.create    | App\Http\Controllers\Admin\Gods\CategoryController@create              | web          |
+|        | DELETE    | admin/gods/categories/{category}         | admin.gods.categories.destroy   | App\Http\Controllers\Admin\Gods\CategoryController@destroy             | web          |
+|        | PUT|PATCH | admin/gods/categories/{category}         | admin.gods.categories.update    | App\Http\Controllers\Admin\Gods\CategoryController@update              | web          |
+|        | GET|HEAD  | admin/gods/categories/{category}         | admin.gods.categories.show      | App\Http\Controllers\Admin\Gods\CategoryController@show                | web          |
+|        | GET|HEAD  | admin/gods/categories/{category}/edit    | admin.gods.categories.edit      | App\Http\Controllers\Admin\Gods\CategoryController@edit                | web          |
+|        | GET|HEAD  | admin/gods/comments                      | admin.gods.comments.index       | App\Http\Controllers\Admin\Gods\CommentsController@index               | web          |
+|        | POST      | admin/gods/comments                      | admin.gods.comments.store       | App\Http\Controllers\Admin\Gods\CommentsController@store               | web          |
+|        | GET|HEAD  | admin/gods/comments/create               | admin.gods.comments.create      | App\Http\Controllers\Admin\Gods\CommentsController@create              | web          |
+|        | GET|HEAD  | admin/gods/comments/{comment}            | admin.gods.comments.show        | App\Http\Controllers\Admin\Gods\CommentsController@show                | web          |
+|        | DELETE    | admin/gods/comments/{comment}            | admin.gods.comments.destroy     | App\Http\Controllers\Admin\Gods\CommentsController@destroy             | web          |
+|        | PUT|PATCH | admin/gods/comments/{comment}            | admin.gods.comments.update      | App\Http\Controllers\Admin\Gods\CommentsController@update              | web          |
+|        | GET|HEAD  | admin/gods/comments/{comment}/edit       | admin.gods.comments.edit        | App\Http\Controllers\Admin\Gods\CommentsController@edit                | web          |
+|        | GET|HEAD  | admin/gods/posts                         | admin.gods.posts.index          | App\Http\Controllers\Admin\Gods\PostController@index                   | web          |
+|        | POST      | admin/gods/posts                         | admin.gods.posts.store          | App\Http\Controllers\Admin\Gods\PostController@store                   | web          |
+|        | GET|HEAD  | admin/gods/posts/create                  | admin.gods.posts.create         | App\Http\Controllers\Admin\Gods\PostController@create                  | web          |
+|        | DELETE    | admin/gods/posts/{post}                  | admin.gods.posts.destroy        | App\Http\Controllers\Admin\Gods\PostController@destroy                 | web          |
+|        | GET|HEAD  | admin/gods/posts/{post}                  | admin.gods.posts.show           | App\Http\Controllers\Admin\Gods\PostController@show                    | web          |
+|        | PUT|PATCH | admin/gods/posts/{post}                  | admin.gods.posts.update         | App\Http\Controllers\Admin\Gods\PostController@update                  | web          |
+|        | GET|HEAD  | admin/gods/posts/{post}/edit             | admin.gods.posts.edit           | App\Http\Controllers\Admin\Gods\PostController@edit                    | web          |
+|        | POST      | admin/images/categories                  | admin.images.categories.store   | App\Http\Controllers\Admin\Images\CategoryController@store             | web          |
+|        | GET|HEAD  | admin/images/categories                  | admin.images.categories.index   | App\Http\Controllers\Admin\Images\CategoryController@index             | web          |
+|        | GET|HEAD  | admin/images/categories/create           | admin.images.categories.create  | App\Http\Controllers\Admin\Images\CategoryController@create            | web          |
+|        | PUT|PATCH | admin/images/categories/{category}       | admin.images.categories.update  | App\Http\Controllers\Admin\Images\CategoryController@update            | web          |
+|        | GET|HEAD  | admin/images/categories/{category}       | admin.images.categories.show    | App\Http\Controllers\Admin\Images\CategoryController@show              | web          |
+|        | DELETE    | admin/images/categories/{category}       | admin.images.categories.destroy | App\Http\Controllers\Admin\Images\CategoryController@destroy           | web          |
+|        | GET|HEAD  | admin/images/categories/{category}/edit  | admin.images.categories.edit    | App\Http\Controllers\Admin\Images\CategoryController@edit              | web          |
+|        | GET|HEAD  | admin/images/posts                       | admin.images.posts.index        | App\Http\Controllers\Admin\Images\PostController@index                 | web          |
+|        | POST      | admin/images/posts                       | admin.images.posts.store        | App\Http\Controllers\Admin\Images\PostController@store                 | web          |
+|        | GET|HEAD  | admin/images/posts/create                | admin.images.posts.create       | App\Http\Controllers\Admin\Images\PostController@create                | web          |
+|        | GET|HEAD  | admin/images/posts/{post}                | admin.images.posts.show         | App\Http\Controllers\Admin\Images\PostController@show                  | web          |
+|        | DELETE    | admin/images/posts/{post}                | admin.images.posts.destroy      | App\Http\Controllers\Admin\Images\PostController@destroy               | web          |
+|        | PUT|PATCH | admin/images/posts/{post}                | admin.images.posts.update       | App\Http\Controllers\Admin\Images\PostController@update                | web          |
+|        | GET|HEAD  | admin/images/posts/{post}/edit           | admin.images.posts.edit         | App\Http\Controllers\Admin\Images\PostController@edit                  | web          |
+|        | GET|HEAD  | api/user                                 |                                 | Closure                                                                | api,auth:api |
+|        | GET|HEAD  | home                                     | home                            | App\Http\Controllers\HomeController@index                              | web,auth     |
+|        | GET|HEAD  | login                                    | login                           | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST      | login                                    |                                 | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | POST      | logout                                   | logout                          | App\Http\Controllers\Auth\LoginController@logout                       | web          |
+|        | POST      | password/email                           | password.email                  | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest    |
+|        | POST      | password/reset                           | password.update                 | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest    |
+|        | GET|HEAD  | password/reset                           | password.request                | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest    |
+|        | GET|HEAD  | password/reset/{token}                   | password.reset                  | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest    |
+|        | POST      | register                                 |                                 | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
+|        | GET|HEAD  | register                                 | register                        | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
++--------+-----------+------------------------------------------+---------------------------------+------------------------------------------------------------------------+--------------+
