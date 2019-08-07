@@ -14,6 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        // test
         return view('blog.admin.blog.posts.index');
     }
 
