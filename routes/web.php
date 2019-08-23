@@ -19,9 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', function () {
-    return view('blog.admin.index');
-});
+Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::group(['namespace' => 'Admin\Blog', 'prefix' => 'admin/blog'], function () {
    Route::resource('posts', 'PostController')
