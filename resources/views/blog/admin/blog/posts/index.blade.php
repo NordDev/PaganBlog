@@ -39,13 +39,22 @@
                     </tr>
                     </thead>
                     <tbody>
+                        @foreach($allPosts as $post)
                         <tr>
-                            <td>id</td>
-                            <td>Название</td>
+                            <td>{{ $post->id }}</td>
+                            <td>{{ $post->title }}</td>
                             <td>Категория</td>
-                            <td>Просмотры</td>
-                            <td>Опубликовано</td>
-                            <td>Картинка</td>
+                            <td>{{ $post->views }}</td>
+                            <td>
+                                @if($post->published_at == null)
+                                    Не опубликовано
+                                @else
+                                    {{ $post->published_at }}
+                                @endif
+                            </td>
+                            <td>
+                                <img src="{{ $post->img }}" alt="" width="100">
+                            </td>
                             <td>
                                 <a href="#" class="fa fa-pencil"></a>
                                     <button onclick="return confirm('Вы точно хотите удалить?')" type="submit" class="delete">
@@ -53,12 +62,26 @@
                                     </button>
                             </td>
                         </tr>
-                    </tfoot>
+                        @endforeach
                 </table>
             </div>
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
+
+        {{--Ссылки пагинатора--}}
+        @if($allPosts->total() > $allPosts->count())
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            {{ $allPosts->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
 
     </section>
 @endsection

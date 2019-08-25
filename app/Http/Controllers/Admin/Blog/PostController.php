@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers\Admin\Blog;
 
+use App\Models\BlogPost;
+use App\Repositories\BlogPostRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
+    private $blogPostRepository;
+
+    public function __construct()
+    {
+        $this->blogPostRepository = app(BlogPostRepository::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('blog.admin.blog.posts.index');
+        $allPosts = $this->blogPostRepository->getAllWithPaginate(25);
+        //dd($allPosts);
+
+        return view('blog.admin.blog.posts.index', compact('allPosts'));
     }
 
     /**
@@ -35,7 +47,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataPost = $request->all();
+
+        $result = (new BlogPost())->create($dataPost);
+        if ($result) {
+            return redirect()
+                ->route('admin.blog.posts.index', [$result->id])
+                ->with(['success' => 'Ура! Статья успешно создана!']);
+        } else {
+            return back()
+                ->withErrors(['msg' => 'Увы, ошибка сохранения.'])
+                ->withInput();
+        }
+        dd($request);
     }
 
     /**
